@@ -10,7 +10,7 @@ class CategorySerializers(serializers.ModelSerializer):
             'Category_id',
             'Category_Name',
             'Category_Description',
-            # 'Category_Image',
+            'Category_Image',
             'Category_Status',
         ]
 
