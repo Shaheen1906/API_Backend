@@ -31,7 +31,7 @@ class ZoneSerializers(serializers.ModelSerializer):
             'Zone_id',
             'Zone_Name',
             'Zone_Description',
-            # 'Zone_Image',
+             'Zone_Image',
         ]
 
 class PackagesTypeSerializers(serializers.ModelSerializer):
