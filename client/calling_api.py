@@ -1,10 +1,10 @@
-import requests
+# import requests
 
-endpoint = "http://localhost:8000/api/"
+# endpoint = "http://localhost:8000/api/"
 
-data = {
+# data = {
     
-}
-get_response = requests.get(endpoint,  json=data)  #API
+# }
+# get_response = requests.get(endpoint,  json=data)  #API
 
-print(get_response.json())
+# print(get_response.json())

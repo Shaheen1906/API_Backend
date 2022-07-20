@@ -45,6 +45,8 @@ class PackagesTypeSerializers(serializers.ModelSerializer):
     
 
 class PackageSerializers(serializers.ModelSerializer):
+    Category_id = serializers.PrimaryKeyRelatedField(queryset = Category.objects.all())
+    State_id = serializers.PrimaryKeyRelatedField(queryset = State.objects.all())
     class Meta:
         model = Package
         fields = [
@@ -59,6 +61,12 @@ class PackageSerializers(serializers.ModelSerializer):
             'State_id',
             'Zone_id',
         ]
+        
+    def to_representation(self, instance):
+        rep = super().to_representation(instance)
+        rep['Category_id'] = CategorySerializers(instance.Category_id).data
+        rep['State_id'] = StateSerializers(instance.State_id).data
+        return rep
         
 class Itinerary_itemsSerializer(serializers.Serializer):
     class Meta:

@@ -16,6 +16,9 @@ class Category(models.Model):
     )
     Category_Status =models.IntegerField(default=1,choices=STATUS)
     
+    def __str__(self):
+        return self.Category_Name
+    
 class State(models.Model):
     State_id = models.IntegerField(primary_key=TRUE)
     State_Name = models.CharField(max_length=60)
